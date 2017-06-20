@@ -1,4 +1,11 @@
-unsigned clock_simulate(unsigned pages[], unsigned pages_len, unsigned table_len);
-void print_frame(int * frames, int * r, int len);
-void clock(unsigned * pg, unsigned pages_len, int page_file_len);
-int find(int *hit_p, int* frames, int page, const int frame_len);
+/*
+* Veer Tatla cssc1153
+* Josh Robey cssc1126
+* CS570 Assignment 2
+* Clock.h
+*
+* Header file for Clock.c program. 
+*/
+unsigned clock_simulate(unsigned page[], unsigned pagesLen, unsigned tableLen);
+void clock(unsigned * pg, unsigned pagesLen, int page_file_len);
+int search_for(int *pgHit, int * frameNum, int pageNum, const int frameLen);

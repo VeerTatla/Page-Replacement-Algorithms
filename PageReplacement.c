@@ -1,3 +1,15 @@
+/*
+* Veer Tatla cssc1153
+* Josh Robey cssc1126
+* CS570 Assignment 2
+* PageReplacement.c
+*
+* This program runs the main method which provides a function
+* that leads to the different page replacement algorithms 
+* passing in the neccessary parameters. This program also
+* tokenizes the integer values from "pages.txt".
+* 
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -29,10 +41,10 @@ unsigned read_page_file(unsigned (*pages_ptr)[]){
         	pch = strtok (NULL, " ");
     	}
     
-    	for(int j=0;j<pages_len;j++)
+    	for(int j = 0;j < pages_len;j++)
     	{
 
-        	(*pages_ptr)[j]=pages[j];
+        	(*pages_ptr)[j] = pages[j];
     	}
     
     
@@ -40,50 +52,27 @@ unsigned read_page_file(unsigned (*pages_ptr)[]){
 
 }
 
+
 int exists(int frame_size,int page_frames[],int page_num)
 {
-    int i, found = 0;
+    	int i, located = 0;
     
-    //search frame
-    for (i=0;i<frame_size;i++)
-    {
-		//if found set 1
-		if(page_frames[i]==page_num)
-            found=1;
-    }
+    	//search frame
+    	for (i = 0;i < frame_size;i++) {
+    	
+		if(page_frames[i] == page_num) {
+            
+	    		located = 1;
+	    
+	    		}
+	    
+    		}
     
-    //return
-    return found;
-}
-
-void print_frame(int * frames, int * r, int len)
-{
-    //print current frame
-    printf("\n");
-    for(int i=0;i<len;i++)
-    {
-        printf("%d\t",frames[i]);
-    }
-    printf("\t");
-    for(int i=0;i<len;i++)
-    {
-        printf("%d ",r[i]);
-    }
+    	return located;
 }
 
 
-//display function
-void display(int page_frames[],int frame_size)
-{
-	int index;
-    
-	//print out the result of the clock argorithm
-	printf("\n    Frames : \t");
-	for(index=0; index<frame_size; index++)
-    {
-		printf("%d\t",page_frames[index]);
-    }
-}
+
 
 
 void page_replacement_sim(){
@@ -96,7 +85,7 @@ void page_replacement_sim(){
 	
 	int length = read_page_file(&_pages);
 	
-	printf("pages: ");
+	printf("\nPage sequence being tested: ");
     	for(int j=0; j<length; j++)
     	{
         	printf("%d ", _pages[j]);
