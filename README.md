@@ -1,12 +1,3 @@
-README.md
-CS570 Assignment 2
-Veerparatap Tatla cssc1153
-Josh Robey cssc1126
-CS570 Operating Systems, Summer 2017
-Assignment #2: Page Replacement Algorithms
-
-*TESTING* use Veer Tatla class account cssc1153 for testing!
-
 File Manifest:
 1.) PageReplacement.c   --> Main Program to run page replacement
 2.) PageReplacement.h   --> Header file for PageReplacement.c
